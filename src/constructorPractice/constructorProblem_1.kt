@@ -43,19 +43,23 @@ class Student {
     }
 
     constructor(name: String, rollNumber: Int, email: String, age: Int) : this(name, rollNumber) {
-        if (email.contains("@") && age >= 5 && age <= 100) {
-            /*
-            better approach
-            if (age !in 5..100) {
-                println("Invalid age: $age")
-                valid = false
-            }
-            */
+        var valid = true
+        if (!email.contains("@")) {
+            println("Invalid email: $email")
+            valid = false
+        }
+
+        if (age !in 5..100) {
+            println("Invalid age: $age")
+            valid = false
+        }
+
+        if (valid) {
             this.email = email
             this.age = age
             println("Student with name : $name and roll: $rollNumber have email : $email and age : $age")
         } else {
-            println("Student with name : $name and roll: $rollNumber have wrong email : $email or age : $age")
+            println("Student with name : $name and roll: $rollNumber was created with incomplete details.")
         }
     }
 }
