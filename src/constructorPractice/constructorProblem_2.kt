@@ -55,10 +55,12 @@ class StudentRegistry {
         val student = Student(name, rollNumber)
         students.add(student)
     }
-    fun addStudent(name:String, rollNumber: Int, email: String, age: Int) {
+
+    fun addStudent(name: String, rollNumber: Int, email: String, age: Int) {
         val student = Student(name, rollNumber, email, age)
         students.add(student)
     }
+
     fun printAllStudents() {
         for (student in students) {
             println("Name: ${student.name}, Roll: ${student.rollNumber}, Email: ${student.email ?: "N/A"}, Age: ${student.age ?: "N/A"}")
