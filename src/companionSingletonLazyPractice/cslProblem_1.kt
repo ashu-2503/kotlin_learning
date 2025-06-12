@@ -20,7 +20,7 @@ Each student should have a method getEmail() that returns ${name.lowercase()}$em
 */
 
 
-package CompanionSingletonLazyPractice
+package companionSingletonLazyPractice
 
 object IdGenerator {
     var count = 0
